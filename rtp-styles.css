@@ -1,52 +1,134 @@
-/* RTP Control Styles */
+/* RTP Control Styling */
 .rtp-control {
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    background: var(--panel-bg);
+    padding: 8px 12px;
+    border-radius: 15px;
+    border: 1px solid var(--primary-neon);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    margin-top: 8px;
 }
 
 .rtp-label {
-    color: var(--accent-neon);
-    font-size: 14px;
-    font-weight: 700;
+    display: block;
     text-align: center;
-}
-
-#target-rtp-value {
+    font-size: 0.75rem;
     color: var(--primary-neon);
-    font-weight: 700;
+    margin-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 #rtp-slider {
     width: 100%;
     height: 6px;
-    background: linear-gradient(to right, #ff0000 0%, #ffff00 50%, #00ff00 100%);
     border-radius: 5px;
+    background: linear-gradient(to right, #ff0000 0%, #ffff00 50%, #00ff00 100%);
     outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
     -webkit-appearance: none;
+    appearance: none;
+}
+
+#rtp-slider:hover {
+    opacity: 1;
 }
 
 #rtp-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
-    background: var(--primary-neon);
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
+    background: var(--primary-neon);
     cursor: pointer;
     box-shadow: 0 0 10px var(--primary-neon);
+    border: 2px solid #fff;
 }
 
 #rtp-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: var(--primary-neon);
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
+    background: var(--primary-neon);
     cursor: pointer;
     box-shadow: 0 0 10px var(--primary-neon);
-    border: none;
+    border: 2px solid #fff;
+}
+
+#target-rtp-value {
+    color: var(--accent-neon);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--accent-neon);
+}
+
+/* Responsive adjustments */
+@media (min-width: 375px) {
+    .rtp-label {
+        font-size: 0.8rem;
+    }
+
+    .rtp-control {
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 600px) {
+    .rtp-control {
+        padding: 12px 20px;
+    }
+
+    .rtp-label {
+        font-size: 0.85rem;
+    }
+
+    #rtp-slider {
+        height: 8px;
+    }
+
+    #rtp-slider::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+    }
+
+    #rtp-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .rtp-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .rtp-control {
+        padding: 15px 25px;
+    }
+
+    .rtp-label {
+        font-size: 1rem;
+    }
+
+    #rtp-slider {
+        height: 10px;
+    }
+
+    #rtp-slider::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
+    }
+
+    #rtp-slider::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .rtp-label {
+        font-size: 1.1rem;
+    }
 }
