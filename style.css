@@ -45,10 +45,10 @@ body {
 .game-wrapper {
     width: 100%;
     max-width: 100%;
-    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
@@ -361,7 +361,7 @@ body {
    RESPONSIVE BREAKPOINTS
    ============================================ */
 
-/* Small Phones: 375px - 599px (Standard mobile baseline) */
+/* Small Phones: 375px - 599px */
 @media (min-width: 375px) {
     .game-title {
         font-size: 2rem;
@@ -426,162 +426,107 @@ body {
     }
 }
 
-/* Tablets Portrait: 768px - 1023px */
+/* Tablets Portrait: 768px+ - FLEXIBLE SCALING */
 @media (min-width: 768px) {
+    body {
+        padding: 2vh 2vw;
+    }
+
     .game-wrapper {
-        max-width: 700px;
-        padding: 20px;
+        width: min(90vmin, 700px);
+        max-height: 90vh;
+        padding: 2vmin;
         border: 2px solid var(--primary-neon);
         border-radius: 20px;
         background: rgba(0, 0, 0, 0.5);
         box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
-        min-height: auto;
-    }
-
-    body {
-        overflow: hidden;
-        height: 100vh;
+        margin: auto;
+        justify-content: space-between;
     }
 
     .game-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
+        font-size: clamp(1.5rem, 4vmin, 3rem);
+        margin-bottom: 1.5vmin;
+    }
+
+    .reels-container {
+        padding: 1.5vmin;
+        gap: 1vmin;
     }
 
     .reel,
     .symbol {
-        width: 85px;
-        height: 85px;
+        width: clamp(60px, 12vmin, 100px);
+        height: clamp(60px, 12vmin, 100px);
     }
 
     .reel {
-        height: 255px;
+        height: clamp(180px, 36vmin, 300px);
     }
 
     .stats-container {
-        padding: 10px;
+        padding: 1.5vmin;
+    }
+
+    .value {
+        font-size: clamp(1rem, 2vmin, 1.5rem);
+    }
+
+    .label {
+        font-size: clamp(0.6rem, 1.2vmin, 0.9rem);
     }
 
     .ui-controls {
         flex-direction: row;
         justify-content: space-between;
-        gap: 15px;
+        gap: 2vmin;
     }
 
     .bet-controls {
         width: 48%;
-        padding: 10px;
+        padding: 1.5vmin;
     }
 
     .spin-btn {
         width: 48%;
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 3vmin, 2rem);
+        padding: 1.5vmin;
     }
 
     .control-btn {
-        font-size: 1.2rem;
-        padding: 10px 15px;
+        font-size: clamp(0.9rem, 2vmin, 1.3rem);
+        padding: 1.5vmin 2vmin;
     }
 
     .bet-label {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 1.5vmin, 1.1rem);
+    }
+
+    .message-area {
+        font-size: clamp(0.8rem, 2vmin, 1.2rem);
     }
 }
 
-/* Tablets Landscape / Small Desktop: 1024px - 1439px */
+/* Large Desktop: 1024px+ */
 @media (min-width: 1024px) {
     .game-wrapper {
-        max-width: 800px;
-    }
-
-    .game-title {
-        font-size: 3rem;
+        width: min(85vmin, 800px);
     }
 
     .reel,
     .symbol {
-        width: 100px;
-        height: 100px;
+        width: clamp(70px, 11vmin, 110px);
+        height: clamp(70px, 11vmin, 110px);
     }
 
     .reel {
-        height: 300px;
-    }
-
-    .reels-container {
-        gap: 8px;
-        padding: 15px;
-    }
-
-    .value {
-        font-size: 1.3rem;
-    }
-
-    .label {
-        font-size: 0.8rem;
-    }
-
-    .message-area {
-        font-size: 1.2rem;
-        min-height: 35px;
+        height: clamp(210px, 33vmin, 330px);
     }
 }
 
-/* Large Desktop: 1440px+ */
+/* Extra Large Desktop: 1440px+ */
 @media (min-width: 1440px) {
     .game-wrapper {
-        max-width: 1000px;
-        max-height: 900px;
-    }
-
-    .game-title {
-        font-size: 3.5rem;
-    }
-
-    .reel,
-    .symbol {
-        width: 120px;
-        height: 120px;
-    }
-
-    .reel {
-        height: 360px;
-    }
-
-    .reels-container {
-        gap: 10px;
-        padding: 20px;
-    }
-
-    .stats-container {
-        padding: 15px;
-    }
-
-    .value {
-        font-size: 1.5rem;
-    }
-
-    .label {
-        font-size: 0.9rem;
-    }
-
-    .control-btn {
-        font-size: 1.4rem;
-    }
-
-    .spin-btn {
-        font-size: 2.5rem;
-        padding: 25px;
-    }
-
-    .message-area {
-        font-size: 1.3rem;
-    }
-}
-
-/* Ultra-wide Desktop: 1920px+ */
-@media (min-width: 1920px) {
-    .game-wrapper {
-        max-width: 1200px;
+        width: min(80vmin, 900px);
     }
 }
