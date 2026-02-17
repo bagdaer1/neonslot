@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Slots</title>
+    <link rel="stylesheet" href="style.css?v=1708286500">
+    <link rel="stylesheet" href="rtp-styles.css?v=1708285200">
+    <link rel="stylesheet" href="free-spins-styles.css?v=1708285200">
+    <link rel="stylesheet" href="level-styles.css?v=1708286400">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="background-overlay"></div>
+        <div class="ui-header">
+            <h1 class="game-title">NEON SLOTS</h1>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="label">CREDITS</span>
+                    <span id="credits" class="value">100000</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">BET</span>
+                    <span id="bet" class="value">100</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">LAST WIN</span>
+                    <span id="win" class="value">0</span>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="label">MONEY IN</span>
+                    <span id="money-in" class="value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">MONEY OUT</span>
+                    <span id="money-out" class="value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">ACTUAL RTP</span>
+                    <span id="actual-rtp" class="value">0.0%</span>
+                </div>
+            </div>
+            <div class="rtp-control">
+                <label for="rtp-slider" class="rtp-label">TARGET RTP: <span id="target-rtp-value">99</span>%</label>
+                <input type="range" id="rtp-slider" min="70" max="99" value="99" step="1">
+            </div>
+        </div>
+
+        <!-- Free Spins Total Display -->
+        <div id="free-spins-total" class="free-spins-total" style="display: none;">
+            <div class="free-spins-label">FREE SPINS TOTAL</div>
+            <div id="free-spins-amount" class="free-spins-amount">0</div>
+        </div>
+
+        <!-- Level Progression Bar -->
+        <div class="level-bar">
+            <div class="level-progress" id="level-progress"></div>
+            <div class="level-item" data-level="1">
+                <div class="level-icon">⭐</div>
+                <div class="level-info">
+                    <div class="level-number">1</div>
+                    <div class="level-rewards">2K | 10 FS</div>
+                </div>
+            </div>
+            <div class="level-item" data-level="2">
+                <div class="level-icon">💎</div>
+                <div class="level-info">
+                    <div class="level-number">2</div>
+                    <div class="level-rewards">5K | 15 FS</div>
+                </div>
+            </div>
+            <div class="level-item" data-level="3">
+                <div class="level-icon">👑</div>
+                <div class="level-info">
+                    <div class="level-number">3</div>
+                    <div class="level-rewards">10K | 20 FS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-4">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-5">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="paylines-layer"></div>
+            </div>
+        </div>
+
+        <div class="ui-controls">
+            <div class="bet-controls">
+                <button id="btn-decrease" class="control-btn">-</button>
+                <span class="bet-label">BET</span>
+                <button id="btn-increase" class="control-btn">+</button>
+                <button id="btn-max" class="control-btn">MAX</button>
+            </div>
+            <button id="btn-spin" class="spin-btn">SPIN</button>
+        </div>
+
+        <div id="message-area" class="message-area">GOOD LUCK!</div>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

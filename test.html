@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test</title>
+    <style>
+        .symbol {
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff !important;
+            background-image: url('assets/symbols.png');
+            background-size: 333.33% 333.33%;
+            background-repeat: no-repeat;
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 5px;
+            border: 2px solid red;
+        }
+
+        .symbol-0 {
+            background-position: 0% 0%;
+        }
+
+        .symbol-1 {
+            background-position: 50% 0%;
+        }
+
+        .symbol-2 {
+            background-position: 100% 0%;
+        }
+
+        .symbol-3 {
+            background-position: 0% 50%;
+        }
+
+        .symbol-4 {
+            background-position: 50% 50%;
+        }
+
+        .symbol-5 {
+            background-position: 100% 50%;
+        }
+
+        .symbol-6 {
+            background-position: 0% 100%;
+        }
+
+        .symbol-7 {
+            background-position: 50% 100%;
+        }
+    </style>
+</head>
+
+<body style="background: #222; padding: 20px;">
+    <h1 style="color: white;">Symbol Test - Each should have WHITE background</h1>
+    <div>
+        <div class="symbol symbol-0"></div>
+        <div class="symbol symbol-1"></div>
+        <div class="symbol symbol-2"></div>
+        <div class="symbol symbol-3"></div>
+        <div class="symbol symbol-4"></div>
+        <div class="symbol symbol-5"></div>
+        <div class="symbol symbol-6"></div>
+        <div class="symbol symbol-7"></div>
+    </div>
+</body>
+
+</html>
